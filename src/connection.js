@@ -4,7 +4,7 @@ let connection = mysql.createConnection({
     host: 'localhost',          //mysql database host name
     user: 'root',               //mysql database user name
     password: 'SQL174',         //mysql database password
-    database: 'nodejs-courses'  //mysql database name
+    database: 'ng-courses'  //mysql database name
 });
 
 connection.connect((err) => {
