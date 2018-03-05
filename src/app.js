@@ -1,8 +1,8 @@
 let express = require('express');
 let bodyParser = require('body-parser');
 let logger = require('morgan');
-// let favicon = require('serve-favicon');
 let cors = require('cors');
+// let favicon = require('serve-favicon');
 
 let index = require('./routes/index');
 let courses = require('./routes/courses');
@@ -17,10 +17,9 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 }));
 app.use(cors({credentials: true, origin: true})); //enable cors
 
-let server = app.listen(3000, "127.0.0.1", function () {
+let server = app.listen(3000, "127.0.0.1", () => {
     let host = server.address().address;
     let port = server.address().port;
-
     console.log("Example app listening at http://%s:%s", host, port)
 });
 
