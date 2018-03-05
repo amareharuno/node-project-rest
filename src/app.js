@@ -4,7 +4,6 @@ let logger = require('morgan');
 let cors = require('cors');
 // let favicon = require('serve-favicon');
 
-let index = require('./routes/index');
 let courses = require('./routes/courses');
 let students = require('./routes/students');
 let teachers = require('./routes/teachers');
@@ -27,7 +26,6 @@ let server = app.listen(3000, "127.0.0.1", () => {
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 
-app.use('/', index);
 app.use('/courses', courses);
 app.use('/students', students);
 app.use('/teachers', teachers);
