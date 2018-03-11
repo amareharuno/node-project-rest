@@ -33,18 +33,14 @@ router.post('/', (req, res) => {
         });
 });
 
-//rest api to update record into mysql database
-router.put('/', (req, res) => {
-    let params = [req.body.Name, req.body.name, req.body.startDate, req.body.endDate, req.body.id];
-    connection.query(
-        'UPDATE `teacher` SET `name`=?,`startDate`=?,`endDate`=?,`teacherId`=? where `id`=?', params,
-
-        (error, results, fields) => {
-            if (error) throw error;
-            res.end(JSON.stringify(results));
-        }
-    );
+router.put('/:id', function (req, res) {
+    let query = 'UPDATE `teacher` SET ? where `id`=' + req.params.id;
+    connection.query(query, req.body, function (error, results, fields) {
+        if (error) throw error;
+        res.json(results);
+    });
 });
+
 
 //rest api to delete record from mysql database
 router.delete('/:id', (req, res) => {
