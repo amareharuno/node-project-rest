@@ -3,7 +3,7 @@ let mysql = require('mysql');
 let connection = mysql.createConnection({
     host: 'localhost',          //mysql database host name
     user: 'root',               //mysql database user name
-    password: 'SQL174',         //mysql database password
+    password: 'root',         //mysql database password
     database: 'ng-courses'  //mysql database name
 });
 
