@@ -46,7 +46,7 @@ router.put('/:id', function (req, res) {
 //rest api to delete record from mysql database
 router.delete('/:id', (req, res) => {
     console.log(req.body);
-    connection.query('DELETE FROM `student_has_course` WHERE `studentid`=?', [req.params.id], function (error, results, fields) {
+    connection.query('DELETE FROM `student_has_course` WHERE `studentId`=?', [req.params.id], function (error, results, fields) {
         if (error) throw error;
         res.end('Record1 has been deleted!');
     });
